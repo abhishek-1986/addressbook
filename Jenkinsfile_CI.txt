@@ -45,7 +45,7 @@ pipeline{
 				sh """
 				echo "To create the pacakge"
 				mvn package
-			
+			        """
 			}
 		}
 		
@@ -54,7 +54,7 @@ pipeline{
 				sh """
 				echo "To verify the package"
 				mvn verify
-		
+				"""
 			}
 		}
 		
