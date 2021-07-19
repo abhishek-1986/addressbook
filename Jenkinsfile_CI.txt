@@ -49,7 +49,7 @@ pipeline{
 			}
 		}
 		
-		stage('Code Verify'{
+		stage('Code Verify'){
 			steps{
 				sh """
 				echo "To verify the package"
