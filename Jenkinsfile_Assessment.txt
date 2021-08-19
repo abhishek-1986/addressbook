@@ -62,13 +62,12 @@ pipeline{
 			steps{
 				sh """
 				echo "Copying the artifacts to a common Location"
-				DIR=${artifacts}
-				if [ -d ${DIR} ]; then
+				if [ -d ${artifacts} ]; then
 				   echo "Copying war file"
-				   cp ./target/addressbook-2.0.war ${DIR}
+				   cp ./target/addressbook-2.0.war ${artifacts}
 				else
-				   mkdir ${DIR}
-				   cp ./target/addressbook-2.0.war ${DIR}
+				   mkdir ${artifacts}
+				   cp ./target/addressbook-2.0.war ${artifacts}
 				fi
 				"""
 			}
