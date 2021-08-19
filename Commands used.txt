@@ -1,0 +1,275 @@
+       6  sudo dnf install java-1.8.0-openjdk-devel
+    7  yum 
+    8  yum install jdk8
+    9  yum install java
+JEnkins install 
+  17  sudo wget -O /etc/yum.repos.d/jenkins.repo     https://pkg.jenkins.io/redhat-stable/jenkins.repo
+   18  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+   19  sudo yum upgrade
+   20  sudo yum install epel-release java-11-openjdk-devel
+   21  sudo yum install jenkins
+   22  sudo systemctl daemon-reload
+   23  systemctl status jenkins
+   24  systemctl start jenkins
+   25  systemctl status jenkins
+   26  cd /var/lib/jenkins/
+   27  ll
+   28  cd secrets 
+   29  ls
+   30  cat initialAdminPassword 
+   31  clear
+
+
+   32  ssh-keygen
+   33  ll
+   34  cd /.ssh
+   35  cd 
+   36  ll
+   37  ls -lta
+   38  cd .ssh
+   39  ls
+   40  cp /var/lib/jenkins/secret/azure* ./
+   41  cp -F /var/lib/jenkins/secret/azure* ./
+   42  cp -f /var/lib/jenkins/secret/azure* ./
+   43  cd /var/lib/jenkins/secrets/
+   44  ll
+   45  chmod yyy azurev*
+   46  chmod 777 azurev*
+   47  cd 
+   48  cd .ssh/
+   49  ll
+   50  cp /var/lib/jenkins/secret/azure* ./
+   51  ssh-keygen
+   52  ll
+   53  cat azure.pub 
+   54  cat azure
+   55  cd
+   56  ls -ltr
+   57  mkdir project1
+   58  dc project1/
+   59  ls -ltr
+   60  chmod 777 project1/
+   61  cd project1/
+   62  ls
+   63  mkdir addressbook
+   64  rm -rf addressbook/
+   65  git
+   66  apt
+
+GIT install
+   67  yum install git 
+   68  git
+   69  git clone git@github.com:abhishek-1986/addressbook.git
+   70  eval $(ssh-agent -s)
+   71  ssh-add /.ssh/azure
+   72  ssh-add azure
+   73  ssh-add
+   74  ssh-add -L
+   75  cd 
+   76  ls -lta
+   77  cd .ssh
+   78  pwd
+   79  cd 
+   80  cd project1/
+   81  ll
+   82  ssh-add /root/.ssh/azure
+   83  git clone git@github.com:abhishek-1986/addressbook.git
+   84  ll
+   85  cd addressbook/
+   86  ll
+   87  cd 
+   88  cd .ssh
+   89  cat azure
+   90  cd /var/lib/jenkins/workspace/
+   91  ll
+   92  cd Code_Validate
+   93  ll
+   94  mvn
+   95  yum install maven
+   96  mvn
+   97  mvn validate
+   98  clear
+   99  which mvn
+  100  whcih git
+  101  which git
+  102  cd ..
+  103  ll
+  104  cd Code_Compile
+  105  ll
+  106  cd target/
+  107  ll
+  108  cd ../
+  109  cd ../Code_Package
+  110  ll
+  111  cd target/
+  112  ll
+  113  systemctl restart jenkins
+  114  systemctl status jenkins
+  115  systemctl restart jenkins
+  116  systemctl status jenkins
+  117  cd ../..
+  118  cd 
+  119  cd .ssh/
+  120  ll
+  121  cat azure
+
+Docker install
+  122  sudo yum remove docker                   docker-client                   docker-client-latest                   docker-common                   docker-latest                   docker-latest-logrotate                   docker-logrotate                   docker-engine
+  123  sudo yum install -y yum-utils
+  124  sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+  125  sudo yum install docker-ce docker-ce-cli containerd.io
+  126  systemctl status docker
+  127  systemctl start docker
+  128  systemctl status docker
+  129  sudo docker run hello-world
+  130  clear
+  131  cd 
+  132  cd project1/
+  133  ll
+  134  mkdir docker
+  135  cd docker/
+  136  vi Docker
+  137  vi Dockerfile
+  138  wget -O artifactory-pro.rpm "https://releases.jfrog.io/artifactory/artifactory-pro-rpms/jfrog-artifactory-pro/jfrog-artifactory-pro-[RELEASE].rpm"
+  139  sudo yum install ./artifactory-pro.rpm -y
+  140  sudo systemctl start artifactory.service
+  141   systemctl start artifactory.service
+  142   systemctl status artifactory.service
+  143  netstat -tnlup | grep 8081
+  144  ps -ef| grep java
+  145  top
+  146   systemctl stop artifactory.service
+  147   systemctl stop artifactory.service
+  148  top
+  149  clear
+  150  ll
+  151  rm -rf *
+  152  ll
+  153  df -h
+  154  cd ..
+  155  ll
+  156  mkdir artifacts
+  157  chmod 777 artifacts/
+  158  ll
+  159  pwd
+  160  cd /var/lib/jenkins/
+  161  mkdir artifacts
+  162  chmod 777 artifacts/
+  163  cd artifacts/
+  164  pwd
+  165  ll
+  166  pws
+  167  pwd
+  168  ll
+  169  pwd
+  170  which java
+  171  cd /bin/
+  172  ls -ltr java
+  173  cd /etc/alternatives/
+  174  ls -ltr java
+  175  which jdk
+  176  export JAVA_HOME
+  177  echo $JAVA_HOME
+  178  which git
+  179  cd /bin ls -ltr git
+  180  ls -ltr git
+  181  ls -lta git
+  182  cd 
+  183  ll
+  184  cd project1/
+  185  ll
+  186  cd docker/
+  187  ll
+  188  vi Dockerfile
+  189  docker build -t --build-arg artifact=/var/lib/jenkins/workspace/artifacts/ mywebapps .
+  190  docker build --build-arg artifact=/var/lib/jenkins/workspace/artifacts/ -t mywebapps .
+  191  docker images
+  192  docker run -it tomcat
+  193  docker images
+  194  docker rmi c5
+  195  docker rmi 26
+  196  docker rmi 26
+  197  docker images
+  198  docker stop tomcat
+  199  docker stop 26
+  200  docker rmi 266
+  201  docker --force rmi 266
+  202  docker rm
+  203  docker rm --help
+  204  docker rm --force 266
+  205  docker rm --force tomcat
+  206  docker images
+  207  docker rmi --force tomcat
+  208  docker images
+  209  vi Dockerfile
+  210  docker build --build-arg artifact=/var/lib/jenkins/workspace/artifacts/ -t mywebapps .
+  211  docker rmi -f mywebapps:latest 
+  212  docker images
+  213  docker rmi -f tomcat
+  214  docker images
+  215  vi Dockerfile 
+  216  docker build --build-arg artifact=/var/lib/jenkins/workspace/artifacts/ -t mywebapps .
+  217  docker rmi -f tomcat
+  218  docker rmi -f mywebapps:latest 
+  219  docker images
+  220  docker rmi -f 04
+  221  docker images
+  222  docker rmi -f 266
+  223  docker images
+  224  vi Dockerfile 
+  225  vi Dockerfile 
+  226  docker build --build-arg artifact=/var/lib/jenkins/workspace/artifacts/ -t mywebapps .
+  227  docker images
+  228  docker rmi -f 24 26
+  229  docker images
+  230  vi Dockerfile 
+  231  vi Dockerfile 
+  232  docker build --build-arg artifact=/var/lib/jenkins/workspace/artifacts/ -t mywebapps .
+  233  docker rmi -f 24 26
+  234  docker images
+  235  docker rmi -f db 26
+  236  docker images
+  237  vi Dockerfile 
+  238  docker build --build-arg art=/var/lib/jenkins/workspace/artifacts/ -t mywebapps .
+  239  docker images
+  240  docker rmi -f 6aa 26
+  241  vi Dockerfile 
+  242  docker images
+  243  docker build --build-arg art=/var/lib/jenkins/workspace/artifacts/ -t mywebapps .
+  244  docker run -it mywebapps
+  245  docker images
+  246  docker rmi -f e1 266
+  247  ll
+  248  docker images
+  249  vi Dockerfile 
+  250  docker images
+  251  docker build --build-arg art=/var/lib/jenkins/workspace/artifacts/ -t mywebapps .
+  252  docker images
+  253  docker rmi -f 38 266
+  254  docker build --build-arg art=/var/lib/jenkins/artifacts/ -t mywebapps .
+  255  docker images
+  256  docker rmi -f c3 266
+  257  docker build --build-arg art=/var/lib/jenkins/artifacts -t mywebapps .
+  258  docker images
+  259  docker rmi -f f1 266
+  260  vi Dockerfile 
+  261  docker build --build-arg art=/var/lib/jenkins/artifacts -t mywebapps .
+  262  docker images
+  263  docker rmi -f e0 266
+  264  vi Dockerfile 
+  265  docker build --build-arg art=/var/lib/jenkins/artifacts -t mywebapps .
+  266  cp /var/lib/jenkins/artifacts/* ./
+  267  ll
+  268  vi Dockerfile 
+  269  docker images
+  270  docker rmi -f 2a 266
+  271* docker build --build-arg art=/var/lib/jenkins/artifacts -t addressbookapp .
+  272  docker images
+  273  docker run -it -p 8888:8080 mywebapps 
+  274  vi Dockerfile 
+  275  sudo usermod -a -G docker jenkins
+  276  systemctl restart jenkins
+  277  docker images
+  278  docker rmi -f mywebapps:latest tomcat:latest 
+  279  docker images
+  280  history >> /home/azureuser/commands.txt
