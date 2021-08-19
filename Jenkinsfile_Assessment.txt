@@ -72,5 +72,17 @@ pipeline{
 				"""
 			}
 		}
+		
+		stage ('Docker-Build'){
+			 steps{
+			 sh """
+			 pwd
+			 ls
+			 cp ${artifacts}/*.war ./
+			 docker build --build-arg art=${artifacts} -t project1/addressbookapp .
+			 docker images
+			 """
+			 }    
+		}
 	}
 }
