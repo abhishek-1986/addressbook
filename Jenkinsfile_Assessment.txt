@@ -58,5 +58,20 @@ pipeline{
 			}
 		}
 		
+		stage('Copy Artifact to common location'){
+			steps{
+				sh """
+				echo "Copying the artifacts to a common Location"
+				DIR=${artifacts}
+				if [ -d ${DIR} ]; then
+				   echo "Copying war file"
+				   cp ./target/addressbook-2.0.war ${DIR}
+				else
+				   mkdir ${DIR}
+				   cp ./target/addressbook-2.0.war ${DIR}
+				fi
+				"""
+			}
+		}
 	}
 }
