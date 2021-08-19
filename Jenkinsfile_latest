@@ -47,6 +47,7 @@ pipeline {
          script{
 			
 			sh """
+			echo "This a git hub push"
              mvn compile
 			 """
          }
