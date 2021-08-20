@@ -77,10 +77,26 @@ pipeline{
 		}
 		
 		stage ('Docker-Build'){
-			
-			docker.build("project1/addressbookapp")
-			 
-		}
+			steps{
+				docker build --build-arg art=${artifacts} -t project1/addressbookapp:v1 .
+				docker images
+			}
+					 
+		     }
+		  
+		  stage ('Docker-Push'){
+			steps{
+				docker push project1/addressbookapp:v1
+			}
+					 
+		     }
+		    
+		  stage ('Docker-Run'){
+			steps{
+				docker run -it -p 8888:8080 project1/addressbookapp:v1
+			}
+					 
+		     }
 	     }
 	
 }
