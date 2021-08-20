@@ -77,9 +77,9 @@ pipeline{
 		}
 		
 		stage ('Docker-Build'){
-			 step{
+			 
 			 app = docker.build("project1/addressbookapp")
-			 }    
+			    
 		}
 	}
 }
