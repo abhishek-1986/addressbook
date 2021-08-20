@@ -79,7 +79,7 @@ pipeline{
 		stage ('Docker-Build'){
 			steps{
 				sh """
-				docker build --build-arg art=${artifacts} -t project1/addressbookapp:v1 .
+				docker build --build-arg art=${artifacts} -t centos03021986/addressbookapp:v1 .
 				docker images
 				"""
 			}
@@ -89,7 +89,7 @@ pipeline{
 		  stage ('Docker-Push'){
 			steps{
 				sh """
-				docker push project1/addressbookapp:v1
+				docker push centos03021986/addressbookapp:v1
 				"""
 			}
 					 
@@ -98,7 +98,7 @@ pipeline{
 		  stage ('Docker-Run'){
 			steps{
 				sh """
-				docker run -it -p 8888:8080 project1/addressbookapp:v1
+				docker run -it -p 8888:8080 centos03021986/addressbookapp:v1
 				"""
 			}
 					 
