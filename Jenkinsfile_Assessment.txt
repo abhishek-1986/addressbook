@@ -77,10 +77,8 @@ pipeline{
 		}
 		
 		stage ('Docker-Build'){
-			def app	= docker.build("project1/addressbookapp")
-			 app.inside {
-        		    sh 'echo "Tests passed"'
-        	}
+			
+			docker.build("project1/addressbookapp")
 			 
 		}
 	     }
