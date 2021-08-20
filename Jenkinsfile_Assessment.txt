@@ -8,6 +8,7 @@ pipeline{
 		jdk 'JAVA_HOME'
 	}
 	
+	def app
 	stages{
 		
 		stage('Code Validation'){
@@ -79,9 +80,8 @@ pipeline{
 			 pwd
 			 ls
 			 cp ${artifacts}/*.war ./
-			 docker build --build-arg art=${artifacts} -t project1/addressbookapp .
-			 docker images
 			 """
+			 app = docker.build("project1/addressbookapp")
 			 }    
 		}
 	}
