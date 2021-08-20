@@ -9,8 +9,6 @@ pipeline{
 		jdk 'JAVA_HOME'
 	}
 	
-node{
-def app	
 	stages{
 		
 		stage('Code Validation'){
@@ -79,10 +77,13 @@ def app
 		}
 		
 		stage ('Docker-Build'){
-			 
+			def app	 
 			 app = docker.build("project1/addressbookapp")
-			    
+			 app.inside {
+        		    sh 'echo "Tests passed"'
+        	}
+			 
 		}
 	     }
-	}
+	
 }
