@@ -75,12 +75,14 @@ pipeline{
 		}
 		
 		stage ('Docker-Build'){
-			 steps{
+			 step{
 			 sh """
 			 pwd
 			 ls
 			 cp ${artifacts}/*.war ./
 			 """
+			 }
+			 step{
 			 app = docker.build("project1/addressbookapp")
 			 }    
 		}
