@@ -1,7 +1,7 @@
 pipeline{
 	agent{
 		label 'master'
-		def app
+		
 	}
 	tools{
 	
@@ -9,7 +9,8 @@ pipeline{
 		jdk 'JAVA_HOME'
 	}
 	
-	
+node{
+def app	
 	stages{
 		
 		stage('Code Validation'){
@@ -82,5 +83,6 @@ pipeline{
 			 app = docker.build("project1/addressbookapp")
 			    
 		}
+	     }
 	}
 }
