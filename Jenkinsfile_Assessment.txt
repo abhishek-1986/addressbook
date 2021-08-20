@@ -8,9 +8,9 @@ pipeline{
 		jdk 'JAVA_HOME'
 	}
 	
-	def app
+	
 	stages{
-		
+		def app
 		stage('Code Validation'){
 			steps{
 				sh """
