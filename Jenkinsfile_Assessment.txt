@@ -99,7 +99,7 @@ pipeline{
 		  stage ('Docker-Run'){
 			steps{
 				sh """
-				docker run -it -p 8888:8080 centos03021986/addressbookapp:v1
+				docker run -it -p 8888:8080 centos03021986/addressbookapp:v1 &
 				"""
 			}
 					 
