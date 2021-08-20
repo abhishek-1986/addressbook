@@ -1,6 +1,7 @@
 pipeline{
 	agent{
 		label 'master'
+		def app
 	}
 	tools{
 	
@@ -10,7 +11,7 @@ pipeline{
 	
 	
 	stages{
-		def app
+		
 		stage('Code Validation'){
 			steps{
 				sh """
