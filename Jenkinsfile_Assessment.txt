@@ -66,22 +66,17 @@ pipeline{
 				if [ -d ${artifacts} ]; then
 				   echo "Copying war file"
 				   cp ./target/addressbook-2.0.war ${artifacts}
+				   cp ${artifacts}/*.war ./
 				else
 				   mkdir ${artifacts}
 				   cp ./target/addressbook-2.0.war ${artifacts}
+				   cp ${artifacts}/*.war ./
 				fi
 				"""
 			}
 		}
 		
 		stage ('Docker-Build'){
-			 step{
-			 sh """
-			 pwd
-			 ls
-			 cp ${artifacts}/*.war ./
-			 """
-			 }
 			 step{
 			 app = docker.build("project1/addressbookapp")
 			 }    
