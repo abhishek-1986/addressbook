@@ -89,6 +89,7 @@ pipeline{
 		  stage ('Docker-Push'){
 			steps{
 				sh """
+				docker login -u centos03021986 -p Sanjith@123 docker.io
 				docker push centos03021986/addressbookapp:v1
 				"""
 			}
